@@ -1,4 +1,10 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity({ name: 'user' })
 export class IUserEntity {
@@ -15,4 +21,12 @@ export class IUserEntity {
   cpf: string;
   @Column({ name: 'password', nullable: false })
   password: string;
+  @Column({ name: 'type_user', nullable: false })
+  type_User: number;
+
+  @CreateDateColumn({ name: 'created_at' })
+  createAt: Date;
+
+  @UpdateDateColumn({ name: 'updated_at' })
+  upDateAt: Date;
 }
